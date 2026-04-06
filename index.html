@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Solution Website</title>
+
+  <!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- REMIX ICON -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- MODAL -->
+<div id="loginModal" class="login-modal">
+
+  <div class="login-box">
+
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+
+    <!-- LOGO -->
+    <div class="bio-logo">
+      <i class="ri-shirt-line"></i>
+    </div>
+
+    <h2 id="formTitle">Welcome Back</h2>
+
+    <p id="formSubtitle">
+      Login to explore latest fashion trends and manage your orders
+    </p>
+
+    <form id="authForm" onsubmit="handleAuthSubmit(event)">
+
+      <!-- ROLE -->
+      <div id="loginRoleBox">
+        <label>Login As</label>
+        <select id="loginRole">
+          <option value="admin">Admin</option>
+          <option value="user">Customer</option>
+        </select>
+        <p class="role-note">Choose your role to continue</p>
+      </div>
+
+      <!-- NAME -->
+      <input type="text" id="fullName" placeholder="Full Name" style="display:none;">
+
+      <!-- PHONE -->
+      <input type="tel" id="phoneNumber" placeholder="Phone Number">
+
+      <!-- EMAIL -->
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <!-- PASSWORD -->
+      <div class="password-field">
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <i class="ri-eye-off-line toggle-eye" id="eyeIcon" onclick="togglePassword()"></i>
+      </div>
+
+      <!-- CONFIRM -->
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
+
+      <button type="submit" class="login-submit" id="submitBtn">
+        Login to Shop
+      </button>
+
+    </form>
+
+    <p class="switch-text">
+      <span id="switchText">Don't have an account?</span>
+      <a href="#" onclick="toggleAuth()">Sign up</a>
+    </p>
+
+  </div>
+
+</div>
+
+
+    <!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="index.html">
+          <img src="./images/stackly_logo.webp" class="logo-img" alt="logo">
+        </a>
+      </div>
+
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li class="dropdown">
+        <a href="index.html">Home</a>
+      </li>
+
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <!-- <li><a href="offers.html">Offers</a></li> -->
+      <li><a href="contact.html">Contact Us</a></li>
+<li>
+  <a href="javascript:void(0)" class="login-btn" onclick="openLogin()">Login</a>
+</li>
+    </ul>
+
+  </nav>
+</header>
+
+<section class="fashion-hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Style That Speaks</h1>
+    <p>Discover the latest trends in fashion & elevate your look</p>
+    <a href="404.html" class="hero-btn">Shop Now</a>
+  </div>
+</section>
+
+
+<section class="trending">
+
+  <h2 class="section-title">Trending Collection</h2>
+
+  <div class="slider">
+
+    <button class="nav-btn prev" onclick="prevSlide()">❮</button>
+
+    <div class="slider-track" id="sliderTrack">
+
+      <!-- WOMEN -->
+      <div class="slide">
+        <div class="card">
+          <img src="images/trending4.webp">
+          <h4>Floral Dress</h4>
+          <p class="price">₹1299</p>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="card">
+          <img src="images/trending6.webp">
+          <h4>Party Dress</h4>
+          <p class="price">₹1599</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+
+        <div class="card">
+          <img src="images/trending5.webp">
+          <h4>Casual Wear</h4>
+          <p class="price">₹999</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- MEN -->
+      <div class="slide">
+        <div class="card">
+          <img src="images/trending1.webp">
+          <h4>Formal Shirt</h4>
+          <p class="price">₹1199</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+
+        <div class="card">
+          <img src="images/trending2.webp">
+          <h4>Shirt-Half Hand</h4>
+          <p class="price">₹799</p>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="card">
+          <img src="images/trending3.webp">
+          <h4>T-shirt</h4>
+          <p class="price">₹1999</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+
+      <!-- KIDS -->
+      <div class="slide">
+        <div class="card">
+          <img src="images/trending7.webp">
+          <h4>Kids Top with Pant</h4>
+          <p class="price">₹699</p>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="card">
+          <img src="images/trending8.webp">
+          <h4>Baby Outfit</h4>
+          <p class="price">₹599</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+
+        <div class="card">
+          <img src="images/trending9.webp">
+          <h4>Kids Western Wear</h4>
+          <p class="price">₹499</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="nav-btn next" onclick="nextSlide()">❯</button>
+
+  </div>
+
+</section>
+
+<section class="new-arrivals">
+
+  <div class="arrivals-container">
+
+<!-- LEFT CONTENT -->
+<div class="arrivals-left">
+  <h2>New Arrivals</h2>
+
+  <p>
+    Step into style with our newest fashion arrivals curated just for you. 
+    Explore fresh designs, modern cuts, and premium fabrics that redefine 
+    everyday fashion. From casual wear to statement outfits, find pieces 
+    that perfectly match your vibe.
+  </p>
+
+  <p>
+    Whether you're updating your wardrobe or looking for the latest trends, 
+    our new collection brings you comfort, quality, and confidence — all in one place.
+  </p>
+
+  <a href="shop.html" class="arrivals-btn">Shop Now</a>
+</div>
+
+    <!-- RIGHT SLIDER -->
+    <div class="arrivals-right">
+
+      <div class="arrivals-slider" id="arrivalsSlider">
+
+        <img src="images/new1.webp" class="active">
+        <img src="images/new2.webp">
+        <img src="images/new3.webp">
+        <img src="images/new4.webp">
+        <img src="images/new5.webp">
+
+      </div>
+
+      <!-- DOTS -->
+      <div class="dots" id="dotsContainer"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="why-shop">
+
+  <h2 class="why-title">Why Shop With Us</h2>
+
+  <div class="why-container">
+
+    <div class="why-item">
+      <i class="ri-truck-line"></i>
+      <h4>Free Delivery</h4>
+      <p>Fast & free shipping on all orders</p>
+    </div>
+
+    <div class="why-item">
+      <i class="ri-star-smile-line"></i>
+      <h4>Top Quality</h4>
+      <p>Premium fabrics & trendy designs</p>
+    </div>
+
+    <div class="why-item">
+      <i class="ri-arrow-go-back-line"></i>
+      <h4>Easy Returns</h4>
+      <p>Hassle-free 10 days return policy</p>
+    </div>
+
+    <div class="why-item">
+      <i class="ri-secure-payment-line"></i>
+      <h4>Secure Payment</h4>
+      <p>100% safe & trusted checkout</p>
+    </div>
+
+    <div class="why-item">
+      <i class="ri-customer-service-2-line"></i>
+      <h4>24/7 Support</h4>
+      <p>We are here to help anytime</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="testimonials">
+
+  <h2 class="testimonial-title">What Our Customers Say</h2>
+
+  <div class="testimonial-container">
+
+<!-- 1 -->
+<div class="testimonial-card">
+  <i class="ri-user-3-line profile-icon"></i>
+  <h4>Priya S</h4>
+  <p>
+    I absolutely love the quality of the dress I ordered! The fabric feels premium,
+    the stitching is perfect, and it fits exactly as expected. It looks even better
+    in real life than in the pictures. Definitely one of my best online shopping experiences.
+  </p>
+  <div class="stars">★★★★★</div>
+</div>
+
+<!-- 2 -->
+<div class="testimonial-card">
+  <i class="ri-user-3-line profile-icon"></i>
+  <h4>Rahul K</h4>
+  <p>
+    The delivery was super fast and the overall shopping experience was smooth.
+    I was impressed with the collection — stylish, affordable, and great quality.
+    Customer support was also very helpful and responsive throughout.
+  </p>
+  <div class="stars">★★★★☆</div>
+</div>
+
+<!-- 3 -->
+<div class="testimonial-card">
+  <i class="ri-user-3-line profile-icon"></i>
+  <h4>Anjali M</h4>
+  <p>
+    Amazing experience shopping here! The clothes are very comfortable and the
+    designs are trendy and unique. I received so many compliments after wearing
+    my outfit. I will definitely shop again and recommend it to my friends.
+  </p>
+  <div class="stars">★★★★★</div>
+</div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="bio-footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT FASHION -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="./images/stackly_logo.webp" alt="Fashion Logo">
+      </div>
+
+      <p>
+        We bring you the latest trends in fashion with high-quality clothing
+        for men, women, and kids. Discover stylish collections, affordable
+        prices, and a seamless shopping experience designed to elevate your
+        everyday look.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="new-arrivals.html">New Arrivals</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul class="social-links">
+        <li><a href="404.html"><i class="ri-facebook-fill"></i> Facebook</a></li>
+        <li><a href="404.html"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+        <li><a href="404.html"><i class="ri-instagram-line"></i> Instagram</a></li>
+        <li><a href="404.html"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+        <li><a href="404.html"><i class="ri-youtube-fill"></i> YouTube</a></li>
+      </ul>
+    </div>
+
+    <!-- FASHION CATEGORIES -->
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="404.html">Men</a></li>
+        <li><a href="404.html">Women</a></li>
+        <li><a href="404.html">Kids</a></li>
+        <li><a href="404.html">Accessories</a></li>
+        <li><a href="404.html">Footwear</a></li>
+      </ul>
+    </div>
+
+    <!-- CUSTOMER SUPPORT -->
+    <div class="footer-col">
+      <h4>Customer Support</h4>
+      <ul>
+        <li><a href="404.html">My Account</a></li>
+        <li><a href="404.html">Order Tracking</a></li>
+        <li><a href="404.html">Returns & Refunds</a></li>
+        <li><a href="404.html">Privacy Policy</a></li>
+        <li><a href="404.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Stackly Fashion | All Rights Reserved</p>
+  </div>
+
+</footer>
+<script>
+    let currentIndex = 0;
+
+const track = document.getElementById("sliderTrack");
+const slides = document.querySelectorAll(".slide");
+
+function updateSlider(){
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextSlide(){
+  currentIndex++;
+
+  if(currentIndex >= slides.length){
+    currentIndex = 0; // loop back
+  }
+
+  updateSlider();
+}
+
+function prevSlide(){
+  currentIndex--;
+
+  if(currentIndex < 0){
+    currentIndex = slides.length - 1;
+  }
+
+  updateSlider();
+}
+
+const images = document.querySelectorAll("#arrivalsSlider img");
+const dotsContainer = document.getElementById("dotsContainer");
+
+let current = 0;
+
+/* CREATE DOTS */
+images.forEach((_, index) => {
+  const dot = document.createElement("span");
+
+  dot.addEventListener("click", () => {
+    current = index;
+    showSlide();
+  });
+
+  dotsContainer.appendChild(dot);
+});
+
+const dots = dotsContainer.querySelectorAll("span");
+
+function showSlide(){
+  images.forEach(img => img.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
+
+  images[current].classList.add("active");
+  dots[current].classList.add("active");
+}
+
+/* AUTO SLIDE */
+setInterval(() => {
+  current++;
+  if(current >= images.length){
+    current = 0;
+  }
+  showSlide();
+}, 3000);
+
+/* INIT */
+showSlide();
+</script>
+<script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Real Estate Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+  <div class="sidebar-header">
+    <h2 class="logo">STACKLY</h2>
+    <div class="close-btn" id="closeBtn">
+      <i class="ri-close-line"></i>
+    </div>
+  </div>
+
+<ul class="menu">
+  <li><a href="#fashion-dashboard" class="active"><i class="ri-dashboard-line"></i> Dashboard</a></li>
+
+  <li><a href="#orders"><i class="ri-shopping-bag-3-line"></i> Orders</a></li>
+  <li><a href="#customers"><i class="ri-user-3-line"></i> Customers</a></li>
+  <li><a href="#inventory"><i class="ri-store-2-line"></i> Inventory</a></li>
+  <li><a href="#reviews"><i class="ri-star-smile-line"></i> Reviews</a></li>
+
+  <div class="menu-title">SYSTEM</div>
+
+  <li><a href="./dashboard-404.html"><i class="ri-settings-3-line"></i> Settings</a></li>
+  <li><a href="./dashboard-404.html"><i class="ri-logout-box-line"></i> Logout</a></li>
+</ul>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+
+    <div class="nav-left">
+      <div class="menu-btn" id="menuBtn">
+        <i class="ri-menu-line" id="menuIcon"></i>
+      </div>
+    </div>
+
+    <h2 class="mobile-logo">STACKLY</h2>
+
+    <div class="nav-right">
+      <div class="nav-search">
+        <i class="ri-shopping-bag-line"></i>
+        <input type="text" placeholder="Search products, orders...">
+      </div>
+
+      <div class="icon">
+        <i class="ri-notification-2-line"></i>
+        <span class="badge">2</span>
+      </div>
+
+      <div class="icon">
+        <i class="ri-chat-3-line"></i>
+        <span class="badge">4</span>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">
+          <i class="ri-user-star-line"></i>
+        </div>
+        <div class="profile-info">
+          <p class="name">Dhruv Reddy</p>
+          <p class="email">admin@estately.com</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<section class="fashion-dashboard" id="fashion-dashboard">
+
+  <!-- HEADER -->
+  <div class="dashboard-header">
+    <h2>Welcome back, <span>Dhruv</span> 👋</h2>
+    <p>Fashion store today.</p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="dashboard-cards">
+
+    <div class="card">
+      <i class="ri-shopping-bag-3-line"></i>
+      <h3>1,245</h3>
+      <p>Total Orders</p>
+    </div>
+
+    <div class="card">
+      <i class="ri-shirt-line"></i>
+      <h3>320</h3>
+      <p>Products</p>
+    </div>
+
+    <div class="card">
+      <i class="ri-user-heart-line"></i>
+      <h3>890</h3>
+      <p>Customers</p>
+    </div>
+
+    <div class="card">
+      <i class="ri-currency-line"></i>
+      <h3>₹2.4L</h3>
+      <p>Revenue</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="fashion-stats">
+
+  <!-- CARD 1 -->
+  <div class="stat-card">
+    <h3>Sales Overview</h3>
+
+    <div class="chart-container">
+
+      <!-- Y AXIS (ONLY ONE) -->
+      <div class="y-axis" id="yAxis"></div>
+
+      <!-- CHART -->
+      <div class="wave-chart">
+        <svg viewBox="0 0 500 120" preserveAspectRatio="none">
+          <path id="wavePath"
+            d="M0,60 C100,20 150,100 250,60 C350,20 400,100 500,60 L500,120 L0,120 Z">
+          </path>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- X AXIS -->
+    <div class="x-axis" id="xAxis"></div>
+
+  </div>
+
+
+  <!-- CARD 2 -->
+  <div class="stat-card">
+    <h3>Order Status</h3>
+
+    <div class="circle-chart">
+      <div class="circle" id="circleChart">
+        <span id="circleText">0%</span>
+      </div>
+
+      <div class="legend">
+        <p><span class="dot success"></span> Delivered</p>
+        <p><span class="dot pending"></span> Pending</p>
+        <p><span class="dot cancel"></span> Cancelled</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CARD 3 -->
+  <div class="stat-card">
+    <h3>Last Month Revenue</h3>
+
+    <ul class="revenue-list">
+      <li><span>Men Collection</span><b>₹45,000</b></li>
+      <li><span>Women Collection</span><b>₹72,000</b></li>
+      <li><span>Adult Collection</span><b>₹28,000</b></li>
+      <li><span>Baby COllection</span><b>₹36,000</b></li>
+    </ul>
+  </div>
+
+</section>
+
+
+<section class="orders-section" id="orders">
+
+  <div class="orders-header">
+    <h2>Recent Orders</h2>
+    <button onclick="goTo404()" class="view-all">View All</button>
+  </div>
+
+  <div class="orders-container">
+
+    <!-- ORDER CARD -->
+    <div class="order-card">
+      <div class="order-top">
+        <h4>#ORD1023</h4>
+        <span class="status delivered">Delivered</span>
+      </div>
+
+      <p class="customer">Aarav Kumar</p>
+
+      <div class="order-details">
+        <span>👕 Men Shirt</span>
+        <span>₹1,299</span>
+      </div>
+
+      <div class="order-footer">
+        <span>12 Feb 2026</span>
+        <button onclick="goTo404()">Details</button>
+      </div>
+    </div>
+
+    <!-- ORDER CARD -->
+    <div class="order-card">
+      <div class="order-top">
+        <h4>#ORD1024</h4>
+        <span class="status pending">Pending</span>
+      </div>
+
+      <p class="customer">Meera Singh</p>
+
+      <div class="order-details">
+        <span>👗 Women Dress</span>
+        <span>₹2,499</span>
+      </div>
+
+      <div class="order-footer">
+        <span>13 Feb 2026</span>
+        <button onclick="goTo404()">Details</button>
+      </div>
+    </div>
+
+<!-- ORDER CARD 1 -->
+<div class="order-card">
+  <div class="order-top">
+    <h4>#ORD1025</h4>
+    <span class="status cancel">Cancelled</span>
+  </div>
+
+  <p class="customer">Rahul Das</p>
+
+  <div class="order-details">
+    <span>👗 Casual Dress</span>
+    <span>₹1,899</span>
+  </div>
+
+  <div class="order-footer">
+    <span>14 Feb 2026</span>
+    <button onclick="goTo404()">Details</button>
+  </div>
+</div>
+
+
+<!-- ORDER CARD 2 -->
+<div class="order-card">
+  <div class="order-top">
+    <h4>#ORD1026</h4>
+    <span class="status delivered">Delivered</span>
+  </div>
+
+  <p class="customer">Priya Sharma</p>
+
+  <div class="order-details">
+    <span>👗 Party Wear Dress</span>
+    <span>₹2,799</span>
+  </div>
+
+  <div class="order-footer">
+    <span>15 Feb 2026</span>
+    <button onclick="goTo404()">Details</button>
+  </div>
+</div>
+
+
+<!-- ORDER CARD 3 -->
+<div class="order-card">
+  <div class="order-top">
+    <h4>#ORD1027</h4>
+    <span class="status pending">Pending</span>
+  </div>
+
+  <p class="customer">Ananya Reddy</p>
+
+  <div class="order-details">
+    <span>👗 Summer Dress</span>
+    <span>₹1,499</span>
+  </div>
+
+  <div class="order-footer">
+    <span>16 Feb 2026</span>
+    <button onclick="goTo404()">Details</button>
+  </div>
+</div>
+
+
+<!-- ORDER CARD 4 -->
+<div class="order-card">
+  <div class="order-top">
+    <h4>#ORD1028</h4>
+    <span class="status delivered">Delivered</span>
+  </div>
+
+  <p class="customer">Sneha Iyer</p>
+
+  <div class="order-details">
+    <span>👗 Designer Dress</span>
+    <span>₹3,299</span>
+  </div>
+
+  <div class="order-footer">
+    <span>17 Feb 2026</span>
+    <button onclick="goTo404()">Details</button>
+  </div>
+</div>
+
+  </div>
+
+</section>
+
+
+<section class="customers-section" id="customers">
+
+  <!-- HEADER -->
+  <div class="customers-header">
+    <h2>Customers</h2>
+    <button onclick="goTo404()" class="add-btn">+ Add Customer</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="customers-container">
+
+    <!-- CARD -->
+    <div class="customer-card">
+      <div class="profile">
+        <img src="images/profile1.webp" alt="">
+        <div>
+          <h4>Priya Sharma</h4>
+          <p>priya@email.com</p>
+        </div>
+      </div>
+
+      <div class="customer-info">
+        <span>Orders: 12</span>
+        <span>Spent: ₹24,000</span>
+      </div>
+
+      <button onclick="goTo404()">View Profile</button>
+    </div>
+
+    <!-- CARD -->
+    <div class="customer-card">
+      <div class="profile">
+        <img src="images/profile2.webp" alt="">
+        <div>
+          <h4>Ananya Reddy</h4>
+          <p>ananya@email.com</p>
+        </div>
+      </div>
+
+      <div class="customer-info">
+        <span>Orders: 8</span>
+        <span>Spent: ₹15,500</span>
+      </div>
+
+      <button onclick="goTo404()">View Profile</button>
+    </div>
+
+    <!-- CARD -->
+    <div class="customer-card">
+      <div class="profile">
+        <img src="images/profile3.webp" alt="">
+        <div>
+          <h4>Kavya Nair</h4>
+          <p>kavya@email.com</p>
+        </div>
+      </div>
+
+      <div class="customer-info">
+        <span>Orders: 20</span>
+        <span>Spent: ₹40,000</span>
+      </div>
+
+      <button onclick="goTo404()">View Profile</button>
+    </div>
+
+    <!-- CARD -->
+    <div class="customer-card">
+      <div class="profile">
+        <img src="images/profile4.webp" alt="">
+        <div>
+          <h4>Sneha Iyer</h4>
+          <p>sneha@email.com</p>
+        </div>
+      </div>
+
+      <div class="customer-info">
+        <span>Orders: 5</span>
+        <span>Spent: ₹9,800</span>
+      </div>
+
+      <button onclick="goTo404()">View Profile</button>
+    </div>
+
+    
+<!-- CARD 5 -->
+<div class="customer-card">
+  <div class="profile">
+    <img src="images/profile5.webp" alt="">
+    <div>
+      <h4>Divya Menon</h4>
+      <p>divya@email.com</p>
+    </div>
+  </div>
+
+  <div class="customer-info">
+    <span>Orders: 10</span>
+    <span>Spent: ₹18,500</span>
+  </div>
+
+  <button onclick="goTo404()">View Profile</button>
+</div>
+
+<!-- CARD 6 -->
+<div class="customer-card">
+  <div class="profile">
+    <img src="images/profile6.webp" alt="">
+    <div>
+      <h4>Neha Kapoor</h4>
+      <p>neha@email.com</p>
+    </div>
+  </div>
+
+  <div class="customer-info">
+    <span>Orders: 14</span>
+    <span>Spent: ₹27,000</span>
+  </div>
+
+  <button onclick="goTo404()">View Profile</button>
+</div>
+
+<!-- CARD 7 -->
+<div class="customer-card">
+  <div class="profile">
+    <img src="images/profile7.webp" alt="">
+    <div>
+      <h4>Isha Gupta</h4>
+      <p>isha@email.com</p>
+    </div>
+  </div>
+
+  <div class="customer-info">
+    <span>Orders: 6</span>
+    <span>Spent: ₹11,200</span>
+  </div>
+
+  <button onclick="goTo404()">View Profile</button>
+</div>
+
+<!-- CARD 8 -->
+<div class="customer-card">
+  <div class="profile">
+    <img src="images/profile8.webp" alt="">
+    <div>
+      <h4>Ritika Sharma</h4>
+      <p>ritika@email.com</p>
+    </div>
+  </div>
+
+  <div class="customer-info">
+    <span>Orders: 18</span>
+    <span>Spent: ₹35,000</span>
+  </div>
+
+  <button onclick="goTo404()">View Profile</button>
+</div>
+
+
+  </div>
+
+</section>
+
+<section class="inventory-section" id="inventory">
+
+  <!-- HEADER -->
+  <div class="inventory-header">
+    <h2>Inventory Overview</h2>
+  </div>
+
+  <!-- TOP STATS -->
+  <div class="inventory-stats">
+
+    <div class="inv-card">
+      <i class="ri-store-2-line"></i>
+      <h3>320</h3>
+      <p>Total Products</p>
+    </div>
+
+    <div class="inv-card">
+      <i class="ri-error-warning-line"></i>
+      <h3>24</h3>
+      <p>Low Stock</p>
+    </div>
+
+    <div class="inv-card">
+      <i class="ri-close-circle-line"></i>
+      <h3>12</h3>
+      <p>Out of Stock</p>
+    </div>
+
+    <div class="inv-card">
+      <i class="ri-shopping-cart-2-line"></i>
+      <h3>1,240</h3>
+      <p>Items Sold</p>
+    </div>
+
+  </div>
+
+  <!-- INVENTORY LIST -->
+  <div class="inventory-list">
+
+    <div class="inventory-item">
+      <div class="item-info">
+        <h4>👗 Summer Dress</h4>
+        <span>Stock: 80</span>
+      </div>
+      <div class="progress">
+        <div class="bar" style="width:80%"></div>
+      </div>
+    </div>
+
+    <div class="inventory-item">
+      <div class="item-info">
+        <h4>👗 Party Wear Dress</h4>
+        <span>Stock: 40</span>
+      </div>
+      <div class="progress">
+        <div class="bar low" style="width:40%"></div>
+      </div>
+    </div>
+
+    <div class="inventory-item">
+      <div class="item-info">
+        <h4>👗 Designer Dress</h4>
+        <span>Stock: 10</span>
+      </div>
+      <div class="progress">
+        <div class="bar danger" style="width:10%"></div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="review-section" id="reviews">
+
+  <!-- 🔥 TOP HEADING -->
+  <div class="review-main-header">
+    <h2>Customers Views</h2>
+    <p>Track visitor performance and customer feedback insights</p>
+  </div>
+
+  <!-- 🔥 CONTENT WRAPPER -->
+  <div class="review-container">
+
+    <!-- LEFT CARD (70%) -->
+    <div class="review-left card">
+
+      <h3>Visitor Performance</h3>
+
+      <div class="chart-container">
+
+        <!-- Y AXIS -->
+        <div class="y-axis" id="reviewYAxis"></div>
+
+        <!-- CHART -->
+        <div class="wave-chart">
+          <svg viewBox="0 0 500 120" preserveAspectRatio="none">
+            <path id="reviewWave"
+              d="M0,60 C100,20 150,100 250,60 C350,20 400,100 500,60 L500,120 L0,120 Z">
+            </path>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- X AXIS -->
+      <div class="x-axis" id="reviewXAxis"></div>
+
+    </div>
+
+
+    <!-- RIGHT CARD (30%) -->
+    <div class="review-right card">
+
+      <h3>Customer Review</h3>
+
+      <div class="rating">
+        ⭐⭐⭐⭐⭐ <span>4.0 / 5</span>
+      </div>
+
+      <div class="review-bars">
+
+        <div class="bar-item">
+          <span>Excellent</span>
+          <div class="progress"><div class="fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="bar-item">
+          <span>Good</span>
+          <div class="progress"><div class="fill good" style="width:60%"></div></div>
+        </div>
+
+        <div class="bar-item">
+          <span>Average</span>
+          <div class="progress"><div class="fill avg" style="width:40%"></div></div>
+        </div>
+
+        <div class="bar-item">
+          <span>Below</span>
+          <div class="progress"><div class="fill low" style="width:25%"></div></div>
+        </div>
+
+        <div class="bar-item">
+          <span>Poor</span>
+          <div class="progress"><div class="fill danger" style="width:10%"></div></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<script>
+
+/* ================= REVIEW SECTION ================= */
+
+// Y AXIS (Review)
+const reviewYAxis = document.getElementById("reviewYAxis");
+if(reviewYAxis){
+  [200,150,100,50,0].forEach(v=>{
+    let span = document.createElement("span");
+    span.innerText = v;
+    reviewYAxis.appendChild(span);
+  });
+}
+
+// X AXIS (Review)
+const reviewXAxis = document.getElementById("reviewXAxis");
+if(reviewXAxis){
+  ["Week 1","Week 2","Week 3","Week 4","Week 5","Week 6"].forEach(v=>{
+    let span = document.createElement("span");
+    span.innerText = v;
+    reviewXAxis.appendChild(span);
+  });
+}
+
+// 🌊 REVIEW WAVE
+const reviewWave = document.getElementById("reviewWave");
+
+if(reviewWave){
+  let reviewOffset = 0;
+
+  function animateReviewWave(){
+    reviewOffset += 2;
+
+    const path = `
+      M0,60 
+      C100,${20 + Math.sin(reviewOffset*0.05)*20}
+      150,${100 - Math.sin(reviewOffset*0.05)*20}
+      250,60 
+      C350,${20 + Math.sin(reviewOffset*0.05)*20}
+      400,${100 - Math.sin(reviewOffset*0.05)*20}
+      500,60 
+      L500,120 L0,120 Z
+    `;
+
+    reviewWave.setAttribute("d", path);
+    requestAnimationFrame(animateReviewWave);
+  }
+
+  animateReviewWave();
+}
+
+
+/* ================= SALES SECTION ================= */
+
+// Y AXIS
+const yAxis = document.getElementById("yAxis");
+if(yAxis){
+  [200,150,100,50,0].forEach(v=>{
+    let span = document.createElement("span");
+    span.innerText = v;
+    yAxis.appendChild(span);
+  });
+}
+
+// X AXIS
+const xAxis = document.getElementById("xAxis");
+if(xAxis){
+  ["Dec 1","Dec 5","Dec 10","Dec 15","Dec 20","Dec 25"].forEach(v=>{
+    let span = document.createElement("span");
+    span.innerText = v;
+    xAxis.appendChild(span);
+  });
+}
+
+// 🌊 SALES WAVE
+const salesWave = document.getElementById("wavePath");
+
+if(salesWave){
+  let salesOffset = 0;
+
+  function animateSalesWave(){
+    salesOffset += 2;
+
+    const path = `
+      M0,60 
+      C100,${20 + Math.sin(salesOffset * 0.05) * 20}
+      150,${100 - Math.sin(salesOffset * 0.05) * 20}
+      250,60 
+      C350,${20 + Math.sin(salesOffset * 0.05) * 20}
+      400,${100 - Math.sin(salesOffset * 0.05) * 20}
+      500,60 
+      L500,120 L0,120 Z
+    `;
+
+    salesWave.setAttribute("d", path);
+    requestAnimationFrame(animateSalesWave);
+  }
+
+  animateSalesWave();
+}
+
+
+/* ================= CIRCLE ================= */
+
+const circle = document.getElementById("circleChart");
+const text = document.getElementById("circleText");
+
+if(circle && text){
+  let percent = 75;
+  let current = 0;
+
+  function animateCircle(){
+    if(current <= percent){
+      circle.style.background = `conic-gradient(
+        #00c896 0% ${current}%,
+        #eee ${current}% 100%
+      )`;
+
+      text.innerText = current + "%";
+      current++;
+
+      requestAnimationFrame(animateCircle);
+    }
+  }
+
+  animateCircle();
+}
+
+
+/* ================= 404 ================= */
+
+function goTo404(){
+  window.location.href = "dashboard-404.html";
+}
+
+</script>
+  <script src="./js/admin-dashboard.js"></script>

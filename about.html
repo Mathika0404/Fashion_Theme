@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Solution Website</title>
+
+  <!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- REMIX ICON -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/about.css">
+</head>
+<body>
+
+<!-- MODAL -->
+<div id="loginModal" class="login-modal">
+
+  <div class="login-box">
+
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+
+    <!-- LOGO -->
+    <div class="bio-logo">
+      <i class="ri-shirt-line"></i>
+    </div>
+
+    <h2 id="formTitle">Welcome Back</h2>
+
+    <p id="formSubtitle">
+      Login to explore latest fashion trends and manage your orders
+    </p>
+
+    <form id="authForm" onsubmit="handleAuthSubmit(event)">
+
+      <!-- ROLE -->
+      <div id="loginRoleBox">
+        <label>Login As</label>
+        <select id="loginRole">
+          <option value="admin">Admin</option>
+          <option value="user">Customer</option>
+        </select>
+        <p class="role-note">Choose your role to continue</p>
+      </div>
+
+      <!-- NAME -->
+      <input type="text" id="fullName" placeholder="Full Name" style="display:none;">
+
+      <!-- PHONE -->
+      <input type="tel" id="phoneNumber" placeholder="Phone Number">
+
+      <!-- EMAIL -->
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <!-- PASSWORD -->
+      <div class="password-field">
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <i class="ri-eye-off-line toggle-eye" id="eyeIcon" onclick="togglePassword()"></i>
+      </div>
+
+      <!-- CONFIRM -->
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
+
+      <button type="submit" class="login-submit" id="submitBtn">
+        Login to Shop
+      </button>
+
+    </form>
+
+    <p class="switch-text">
+      <span id="switchText">Don't have an account?</span>
+      <a href="#" onclick="toggleAuth()">Sign up</a>
+    </p>
+
+  </div>
+
+</div>
+
+    <!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="index.html">
+          <img src="./images/stackly_logo.webp" class="logo-img" alt="logo">
+        </a>
+      </div>
+
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li class="dropdown">
+        <a href="index.html">Home</a>
+      </li>
+
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <!-- <li><a href="offers.html">Offers</a></li> -->
+      <li><a href="contact.html">Contact Us</a></li>
+<li>
+  <a href="javascript:void(0)" class="login-btn" onclick="openLogin()">Login</a>
+</li>
+    </ul>
+
+  </nav>
+</header>
+
+
+<section class="about-hero">
+
+  <div class="about-overlay"></div>
+
+  <div class="about-content">
+    <h1>About Our Brand</h1>
+    <p>
+      We bring you modern fashion with premium quality and timeless style.
+      Discover who we are and what makes us different.
+    </p>
+  </div>
+
+</section>
+
+
+<section class="brand-story">
+
+  <div class="brand-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="brand-image">
+      <img src="images/about_company.webp" alt="Our Brand">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="brand-content">
+      <h2>Our Brand Story</h2>
+
+      <p>
+        Our journey started with a simple idea — to create fashion that blends
+        comfort, quality, and modern style. We believe that clothing is not just
+        about appearance, but about confidence and self-expression.
+      </p>
+
+      <p>
+        Over the years, we have grown into a trusted fashion brand, offering
+        carefully curated collections for every occasion. From everyday wear
+        to statement outfits, we design pieces that inspire and empower.
+      </p>
+
+      <p>
+        Our mission is to deliver premium fashion at affordable prices while
+        maintaining high standards in quality and customer satisfaction.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="mission-vision">
+
+  <div class="mission-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="mission-content">
+      <h2>Our Mission & Vision</h2>
+
+      <p>
+        Our mission is to redefine everyday fashion by combining comfort,
+        quality, and modern design. We aim to create clothing that not only
+        looks good but also makes people feel confident and empowered in their
+        daily lives.
+      </p>
+
+      <p>
+        We focus on delivering premium fashion at affordable prices, ensuring
+        that style is accessible to everyone. Our collections are designed to
+        match different personalities and occasions with perfection.
+      </p>
+
+      <p>
+        Our vision is to grow into a globally recognized fashion brand known
+        for innovation, sustainability, and customer satisfaction. We believe
+        fashion is a powerful way to express individuality and confidence.
+      </p>
+
+      <p>
+        Through our journey, we strive to inspire people to embrace their unique
+        style while maintaining the highest standards of quality and service.
+      </p>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="mission-image">
+      <img src="images/mission.webp" alt="Mission Vision">
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="why-choose">
+
+  <div class="why-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="why-image">
+      <img src="images/why_choose.webp" alt="Why Choose Us">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="why-content">
+      <h2>Why Choose Us?</h2>
+
+      <div class="why-item">
+        <i class="ri-shirt-fill"></i>
+        <p><strong>Premium Quality</strong> fabrics designed for comfort, durability, and everyday style.</p>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-star-smile-fill"></i>
+        <p><strong>Latest Trends</strong> curated collections that keep you ahead in fashion.</p>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-refresh-fill"></i>
+        <p><strong>Easy Returns</strong> hassle-free exchange and return policies for your convenience.</p>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-secure-payment-fill"></i>
+        <p><strong>Secure Payments</strong> safe and reliable checkout experience every time.</p>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-truck-fill"></i>
+        <p><strong>Fast Delivery</strong> quick shipping to bring your favorite styles to your doorstep.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="bio-footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT FASHION -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="./images/stackly_logo.webp" alt="Fashion Logo">
+      </div>
+
+      <p>
+        We bring you the latest trends in fashion with high-quality clothing
+        for men, women, and kids. Discover stylish collections, affordable
+        prices, and a seamless shopping experience designed to elevate your
+        everyday look.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <!-- <li><a href="new-arrivals.html">New Arrivals</a></li> -->
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul class="social-links">
+        <li><a href="404.html"><i class="ri-facebook-fill"></i> Facebook</a></li>
+        <li><a href="404.html"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+        <li><a href="404.html"><i class="ri-instagram-line"></i> Instagram</a></li>
+        <li><a href="404.html"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+        <li><a href="404.html"><i class="ri-youtube-fill"></i> YouTube</a></li>
+      </ul>
+    </div>
+
+    <!-- FASHION CATEGORIES -->
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="404.html">Men</a></li>
+        <li><a href="404.html">Women</a></li>
+        <li><a href="404.html">Kids</a></li>
+        <li><a href="404.html">Accessories</a></li>
+        <li><a href="404.html">Footwear</a></li>
+      </ul>
+    </div>
+
+    <!-- CUSTOMER SUPPORT -->
+    <div class="footer-col">
+      <h4>Customer Support</h4>
+      <ul>
+        <li><a href="404.html">My Account</a></li>
+        <li><a href="404.html">Order Tracking</a></li>
+        <li><a href="404.html">Returns & Refunds</a></li>
+        <li><a href="404.html">Privacy Policy</a></li>
+        <li><a href="404.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Stackly Fashion | All Rights Reserved</p>
+  </div>
+
+</footer>
+<script src="./js/script.js"></script>
+</body>
+</html>

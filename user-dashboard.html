@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Real Estate Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/user-dashboard.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+  <div class="sidebar-header">
+    <h2 class="logo">STACKLY</h2>
+    <div class="close-btn" id="closeBtn">
+      <i class="ri-close-line"></i>
+    </div>
+  </div>
+
+<ul class="menu">
+
+  <!-- MAIN -->
+<li><a href="#dashboard" class="active"><i class="ri-dashboard-line"></i> Dashboard</a></li>
+
+  <li><a href="#orders">
+    <i class="ri-shopping-bag-3-line"></i> My Orders
+  </a></li>
+
+  <li><a href="#wishlist">
+    <i class="ri-heart-3-line"></i> Wishlist
+  </a></li>
+
+  <li><a href="#addresses">
+    <i class="ri-map-pin-line"></i> Addresses
+  </a></li>
+
+  <li><a href="#reviews">
+    <i class="ri-star-line"></i> My Reviews
+  </a></li>
+
+  <!-- SYSTEM -->
+  <div class="menu-title">SYSTEM</div>
+
+  <li><a href="dashboard-404.html">
+    <i class="ri-settings-3-line"></i> Settings
+  </a></li>
+
+  <li><a href="./dashboard-404.html">
+    <i class="ri-logout-box-r-line"></i> Logout
+  </a></li>
+
+</ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+
+    <div class="nav-left">
+      <div class="menu-btn" id="menuBtn">
+        <i class="ri-menu-line" id="menuIcon"></i>
+      </div>
+    </div>
+
+    <h2 class="mobile-logo">STACKLY</h2>
+
+    <div class="nav-right">
+      <div class="nav-search">
+        <i class="ri-shopping-bag-line"></i>
+        <input type="text" placeholder="Search products, orders...">
+      </div>
+
+      <div class="icon">
+        <i class="ri-notification-2-line"></i>
+        <span class="badge">2</span>
+      </div>
+
+      <div class="icon">
+        <i class="ri-chat-3-line"></i>
+        <span class="badge">4</span>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">
+          <i class="ri-user-star-line"></i>
+        </div>
+        <div class="profile-info">
+          <p class="name">Rayan</p>
+          <p class="email">rayanuser@estately.com</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="user-dashboard" id="dashboard">
+
+  <!-- HEADER -->
+  <div class="user-header">
+    <h2>Welcome back, <span>Rayan</span> 👋</h2>
+    <p>Explore my fashion journey & track my activity</p>
+  </div>
+
+  <!-- STATS CARDS -->
+  <div class="user-cards">
+
+    <div class="user-card">
+      <i class="ri-shopping-bag-3-line"></i>
+      <h3>12</h3>
+      <p>Orders</p>
+      <span class="growth">+15%</span>
+    </div>
+
+    <div class="user-card">
+      <i class="ri-heart-3-line"></i>
+      <h3>8</h3>
+      <p>Wishlist</p>
+      <span class="growth">+8%</span>
+    </div>
+
+    <div class="user-card">
+      <i class="ri-shopping-cart-2-line"></i>
+      <h3>3</h3>
+      <p>Cart Items</p>
+      <span class="growth">+5%</span>
+    </div>
+
+    <div class="user-card">
+      <i class="ri-star-smile-line"></i>
+      <h3>4.2</h3>
+      <p>Avg Rating</p>
+      <span class="growth">+10%</span>
+    </div>
+
+  </div>
+
+</section>
+<section class="sales-section">
+
+  <!-- CARD 1 (WAVE CHART) -->
+  <div class="sales-card">
+
+    <h3>Revenue</h3>
+
+    <div class="chart-container">
+
+      <!-- Y AXIS -->
+      <div class="y-axis">
+        <span>30k</span>
+        <span>20k</span>
+        <span>10k</span>
+        <span>0</span>
+      </div>
+
+      <!-- WAVE CHART -->
+      <div class="wave-chart">
+        <svg viewBox="0 0 500 120" preserveAspectRatio="none">
+
+          <!-- LINE 1 -->
+          <path 
+            d="M0,80 C80,40 160,100 240,60 C320,20 400,80 500,50" 
+            fill="none" 
+            stroke="#6aa9ff" 
+            stroke-width="3"/>
+
+          <!-- LINE 2 -->
+          <path 
+            d="M0,60 C80,90 160,30 240,70 C320,110 400,40 500,80" 
+            fill="none" 
+            stroke="#00c896" 
+            stroke-width="3"/>
+
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- X AXIS -->
+    <div class="x-axis">
+      <span>Jan</span>
+      <span>Feb</span>
+      <span>Mar</span>
+      <span>Apr</span>
+      <span>May</span>
+      <span>Jun</span>
+    </div>
+
+  </div>
+
+
+  <!-- CARD 2 -->
+  <div class="sales-card">
+    <h3>My Sales by Location</h3>
+
+    <div class="location-list">
+
+      <div class="location-item">
+        <span>Chennai</span>
+        <div class="bar"><div style="width:70%"></div></div>
+      </div>
+
+      <div class="location-item">
+        <span>Bangalore</span>
+        <div class="bar"><div style="width:50%"></div></div>
+      </div>
+
+      <div class="location-item">
+        <span>Mumbai</span>
+        <div class="bar"><div style="width:60%"></div></div>
+      </div>
+
+      <div class="location-item">
+        <span>Delhi</span>
+        <div class="bar"><div style="width:40%"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- CARD 3 -->
+  <div class="sales-card">
+    <h3>Total Sales</h3>
+
+    <div class="pie-container">
+
+      <div class="pie-chart" id="pieChart">
+        <span id="pieText">0%</span>
+      </div>
+
+      <ul class="pie-legend">
+        <li><span class="dot d1"></span> Online</li>
+        <li><span class="dot d2"></span> Store</li>
+        <li><span class="dot d3"></span> Offers</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="my-orders" id="orders">
+
+  <div class="orders-header">
+    <h2>My Orders</h2>
+  </div>
+
+  <div class="orders-grid">
+
+    <!-- ITEM 1 -->
+    <div class="order-item">
+      <img src="images/trending4.webp" alt="">
+      <h4>Floral Dress</h4>
+      <p>₹1,499</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="order-item">
+      <img src="images/trending5.webp" alt="">
+      <h4>Party Wear Dress</h4>
+      <p>₹2,799</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="order-item">
+      <img src="images/trending6.webp" alt="">
+      <h4>Casual Dress</h4>
+      <p>₹1,299</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="order-item">
+      <img src="images/men2.webp" alt="">
+      <h4>Summer Dress</h4>
+      <p>₹1,699</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="order-item">
+      <img src="images/men3.webp" alt="">
+      <h4>Designer Dress</h4>
+      <p>₹3,299</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <!-- ITEM 6 -->
+    <div class="order-item">
+      <img src="images/men4.webp" alt="">
+      <h4>Evening Dress</h4>
+      <p>₹2,499</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 7 -->
+    <div class="order-item">
+      <img src="images/women1.webp" alt="">
+      <h4>Printed Dress</h4>
+      <p>₹1,899</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 8 -->
+    <div class="order-item">
+      <img src="images/women2.webp" alt="">
+      <h4>Maxi Dress</h4>
+      <p>₹2,199</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="wishlist-section" id="wishlist">
+
+  <div class="wishlist-header">
+    <h2>My Wishlist</h2>
+  </div>
+
+  <div class="wishlist-grid">
+
+    <!-- ITEM 1 -->
+    <div class="wishlist-item">
+      <div class="img-box">
+        <img src="images/user_img1.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+      <h4>Floral Dress</h4>
+      <p>₹1,499</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="wishlist-item">
+      <div class="img-box">
+        <img src="images/user_img2.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+      <h4>Party Dress</h4>
+      <p>₹2,799</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="wishlist-item">
+      <div class="img-box">
+        <img src="images/user_img3.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+      <h4>Casual Dress</h4>
+      <p>₹1,299</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="wishlist-item">
+      <div class="img-box">
+        <img src="images/user_img4.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+      <h4>Summer Dress</h4>
+      <p>₹1,699</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="wishlist-item">
+      <div class="img-box">
+        <img src="images/user_img5.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+      <h4>Designer Dress</h4>
+      <p>₹3,299</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <!-- ITEM 6 -->
+    <div class="wishlist-item">
+      <div class="img-box">
+        <img src="images/user_img6.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+      <h4>Evening Dress</h4>
+      <p>₹2,499</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="address-section" id="addresses">
+
+  <!-- LEFT MAP -->
+  <div class="address-map">
+    <iframe 
+      src="https://www.google.com/maps?q=Chennai&output=embed" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- RIGHT DETAILS -->
+  <div class="address-details">
+
+    <h2>My Address</h2>
+
+    <div class="info-box">
+      <i class="ri-phone-line"></i>
+      <div>
+        <h4>Phone</h4>
+        <p>+91 98765 43210</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <i class="ri-mail-line"></i>
+      <div>
+        <h4>Email</h4>
+        <p>mathika@email.com</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <i class="ri-map-pin-line"></i>
+      <div>
+        <h4>Location</h4>
+        <p>Chennai, Tamil Nadu, India</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="my-reviews" id="reviews">
+
+  <div class="reviews-header">
+    <h2>My Reviews</h2>
+  </div>
+
+  <div class="reviews-container">
+
+    <!-- REVIEW 1 -->
+    <div class="review-card">
+      <img src="images/women1.webp" alt="">
+      
+      <div class="review-content">
+        <h4>Floral Summer Dress</h4>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <p>Very comfortable and stylish. Perfect for daily wear!</p>
+        <span class="date">12 Feb 2026</span>
+      </div>
+    </div>
+
+    <!-- REVIEW 2 -->
+    <div class="review-card">
+      <img src="images/women2.webp" alt="">
+      
+      <div class="review-content">
+        <h4>Party Wear Dress</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Amazing quality! Loved the design and fit.</p>
+        <span class="date">18 Feb 2026</span>
+      </div>
+    </div>
+
+    <!-- REVIEW 3 -->
+    <div class="review-card">
+      <img src="images/women3.webp" alt="">
+      
+      <div class="review-content">
+        <h4>Casual Cotton Dress</h4>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <p>Good for everyday use. Fabric is soft and breathable.</p>
+        <span class="date">25 Feb 2026</span>
+      </div>
+    </div>
+
+    <!-- REVIEW 4 -->
+    <div class="review-card">
+      <img src="images/women4.webp" alt="">
+      
+      <div class="review-content">
+        <h4>Evening Gown</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Elegant and premium feel. Worth the price!</p>
+        <span class="date">2 Mar 2026</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* Y AXIS */
+const yAxis = document.getElementById("salesYAxis");
+[30,20,10,0].forEach(v=>{
+  let s=document.createElement("span");
+  s.innerText=v+"k";
+  yAxis.appendChild(s);
+});
+
+/* X AXIS */
+const xAxis = document.getElementById("salesXAxis");
+["Jan","Feb","Mar","Apr","May","Jun"].forEach(v=>{
+  let s=document.createElement("span");
+  s.innerText=v;
+  xAxis.appendChild(s);
+});
+
+/* 🌊 WAVE */
+const wave = document.getElementById("salesWave");
+let offset=0;
+
+function animateWave(){
+  offset+=2;
+
+  const path = `
+    M0,60 
+    C100,${30+Math.sin(offset*0.05)*20}
+    200,${80-Math.sin(offset*0.05)*20}
+    300,60 
+    C400,${30+Math.sin(offset*0.05)*20}
+    500,60 
+    L500,120 L0,120 Z
+  `;
+
+  wave.setAttribute("d",path);
+  requestAnimationFrame(animateWave);
+}
+animateWave();
+
+
+/* 🟢 PIE CHART */
+const pie = document.getElementById("pieChart");
+const text = document.getElementById("pieText");
+
+let percent=65;
+let current=0;
+
+function animatePie(){
+  if(current<=percent){
+
+    pie.style.background = `conic-gradient(
+      #6aa9ff 0% ${current}%,
+      #00c896 ${current}% ${current+20}%,
+      #ffcc00 ${current+20}% 100%
+    )`;
+
+    text.innerText=current+"%";
+    current++;
+
+    requestAnimationFrame(animatePie);
+  }
+}
+animatePie();
+
+</script>
+  <script src="./js/admin-dashboard.js"></script>
