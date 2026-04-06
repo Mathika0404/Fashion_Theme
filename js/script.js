@@ -14,6 +14,7 @@
   });
 
 
+// STATE
 let isSignup = false;
 
 /* OPEN */
@@ -68,37 +69,93 @@ function updateForm(){
 function handleAuthSubmit(e){
   e.preventDefault();
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("loginPassword").value.trim();
+const email = document.getElementById("email");
+const password = document.getElementById("loginPassword");
+const phone = document.getElementById("phoneNumber"); 
+const role = document.getElementById("loginRole");
 
-  if(!isSignup){
+  let isValid = true;
 
-    const role = document.getElementById("loginRole").value;
+  // RESET BORDER 
+  document.querySelectorAll("input").forEach(input => {
+    input.style.border = "1px solid #ccc";
+  });
 
-    if(role === "admin"){
-      window.location.href = "admin-dashboard.html";
-    }
-    else if(role === "user"){
-      window.location.href = "user-dashboard.html";
-    }
+  // EMAIL
+  if(email.value.trim() === ""){
+    email.style.border = "2px solid red";
+    isValid = false;
+  }
 
-  } 
+  // PHONE
+if(phone.value.trim() === ""){
+  phone.style.border = "2px solid red";
+  isValid = false;
+}
+
+  // PASSWORD
+  if(password.value.trim() === ""){
+    password.style.border = "2px solid red";
+    isValid = false;
+  }
+
+  /* LOGIN */
+if(!isSignup){
+
+  if(!isValid){
+    alert("Please fill all fields!");
+    return;
+  }
+
+  if(role.value === "admin"){
+    window.location.href = "admin-dashboard.html";
+  }
+  else{
+    window.location.href = "user-dashboard.html";
+  }
+
+}
+  
+  /* SIGNUP */
   else {
 
-    const name = document.getElementById("fullName").value.trim();
-    const phone = document.getElementById("phoneNumber").value.trim();
-    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+    const name = document.getElementById("fullName");
+    const phone = document.getElementById("phoneNumber");
+    const confirmPassword = document.getElementById("confirmPassword");
 
-    if(name === "" || phone === "" || email === "" || password === "" || confirmPassword === ""){
+    // NAME
+    if(name.value.trim() === ""){
+      name.style.border = "2px solid red";
+      isValid = false;
+    }
+
+    // PHONE
+    if(phone.value.trim() === ""){
+      phone.style.border = "2px solid red";
+      isValid = false;
+    }
+
+    // CONFIRM PASSWORD
+    if(confirmPassword.value.trim() === ""){
+      confirmPassword.style.border = "2px solid red";
+      isValid = false;
+    }
+
+    // EMPTY CHECK
+    if(!isValid){
       alert("Please fill all fields!");
       return;
     }
 
-    if(password !== confirmPassword){
+    // PASSWORD MATCH
+    if(password.value !== confirmPassword.value){
+      password.style.border = "2px solid red";
+      confirmPassword.style.border = "2px solid red";
       alert("Passwords do not match!");
       return;
     }
 
+    // 👉 SIGNUP SUCCESS → 404 PAGE
     window.location.href = "404.html";
   }
 }
