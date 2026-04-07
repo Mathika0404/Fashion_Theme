@@ -480,15 +480,14 @@ margin-top:-8px;
 }
 
 .card img{
-  width:100%;
-  border-radius:10px;
-  transition:0.4s;
-  cursor:pointer;
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-/* ZOOM EFFECT */
 .card img:hover{
-  transform:scale(1.15);
+  transform: scale(1.1);
 }
 
 /* TEXT */
